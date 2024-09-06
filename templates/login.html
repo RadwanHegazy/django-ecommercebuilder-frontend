@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="{% static 'style/form.css' %}">
+</head>
+<body>
+    
+
+    {% for m in messages %}
+        <script>alert("{{m}}")</script>
+    {% endfor %}
+    <form class="container" method="POST">
+        {% csrf_token %}
+        <h1>تسجيل الدخول</h1>
+        <input type="email" placeholder="البريد الالكتروني" name="email">
+        <input type="password" placeholder="كلمة المرور" name="password">
+        <div class="btns">
+            <a href="{% url 'register' %}">انشاء حساب ؟</a>
+            <button type="submit">تسجيل الدخول</button>
+        </div>
+    </form>
+
+</body>
+</html>

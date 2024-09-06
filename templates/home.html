@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{tenant.name}}</title>
+    <link rel="stylesheet" href="{% static 'style/home.css' %}">
+</head>
+<body>
+
+    <div class="up">
+        <h1>{{tenant.name}}</h1>
+    </div>
+
+    <div class="container">
+        
+        {% for product in products %}
+            <div class="box">
+                <img width="100px" height="100px" src="{{main_url}}{{product.image}}" alt="">
+                <p>الاسم :  <b> {{product.title}}</b></p>
+                <p>السعر :  <b> {{product.price}}</b></p>
+                <a href="https://wa.me/+2{{product.phonenumber}}" target="_blank">اطلب الان</a>
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+</body>
+</html> 

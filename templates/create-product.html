@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انشاء منتج</title>
+    <link rel="stylesheet" href="{% static 'style/form.css' %}">
+</head>
+<body>
+    
+
+    <form class="container" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>انشاء منتج</h1>
+        <input type="text" placeholder="اسم المنتج" name="title">
+        <input type="number" placeholder="السعر" name="price">
+        <p style="text-align: right;"> : الصورة</p>
+        <input type="file" style="text-align: center;height: auto;" placeholder="الصورة" name="image">
+        <div class="btns"> 
+            <button class="full" type="submit">انشاء</button>
+        </div>
+    </form>
+
+</body>
+</html>
